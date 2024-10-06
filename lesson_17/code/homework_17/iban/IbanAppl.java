@@ -15,9 +15,9 @@ public class IbanAppl {
         IbanCode iban1 = new IbanCode("DE52 2345 3745 0967 2318 33");
 
         iban1.display();
-        System.out.println(iban1.lengthCode());
-        System.out.println(iban1.controlCode());
-        System.out.println(iban1.isValid());
+        System.out.println("Number of characters: " + iban1.lengthCode());
+        System.out.println("Sum of first two characters (according to ASCII): " + iban1.controlCode());
+        System.out.println("IBAN is valid: " + iban1.isValid());
 
     }//end of main
 
