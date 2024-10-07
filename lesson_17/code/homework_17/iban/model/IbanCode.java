@@ -27,7 +27,7 @@ public class IbanCode {
 
     //display
     public void display(){
-        System.out.println("IBAN" + iban);
+        System.out.println("IBAN: " + iban);
     }
 
     //methods
