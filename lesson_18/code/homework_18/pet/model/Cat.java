@@ -61,4 +61,8 @@ public class Cat extends Pet {
                 ", weight=" + weight +
                 "} " + super.toString();
     }
+
+    public void voice(){
+        System.out.println("Meow-meow-meow!");
+    }
 }

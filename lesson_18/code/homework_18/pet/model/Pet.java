@@ -66,11 +66,7 @@ public class Pet {
 
     //voice method
     public void voice(){
-        if(getSpecies().equals("cat")){
-            System.out.println("Meow-meow-meow!");
-        } else if (getSpecies().equals("dog")) {
-            System.out.println("Woof-woof!");
-        }
+
     }
 
 }
