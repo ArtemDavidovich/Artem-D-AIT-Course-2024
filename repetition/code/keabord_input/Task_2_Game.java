@@ -74,7 +74,7 @@ public class Task_2_Game {
                     System.out.println("You've WON! The random number was " + guess + "! Congratulations!!!");
                     System.out.println("You have made " + count + " tries in total.");
                 } else{
-                    System.out.println("Sorry, you have made to many attempts :(");
+                    System.out.println("Game Over. Sorry, you have made to many attempts :(");
                 }
                     System.out.println("Do you want to play once more? Type in true or false:");
                     validInput = false;
