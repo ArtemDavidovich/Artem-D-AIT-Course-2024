@@ -77,7 +77,16 @@ public class Task_2_Game {
                     System.out.println("Sorry, you have made to many attempts :(");
                 }
                     System.out.println("Do you want to play once more? Type in true or false:");
+                    validInput = false;
+                while(!validInput){
+                try {
                     nextGame = scanner.nextBoolean();
+                    validInput = true;
+                } catch (InputMismatchException x) {
+                    System.out.println("Incorrect input! Please, enter true or false.");
+                    scanner.next();
+                }
+            }
                 if (nextGame){
                     System.out.println("Great choice! Then we should play once again!");
                     System.out.println("Let's start! Make your first try:");
