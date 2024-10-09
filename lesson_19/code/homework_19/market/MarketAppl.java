@@ -20,6 +20,8 @@ import homework_19.market.model.Product;
 
 import java.util.Scanner;
 
+import static homework_19.market.model.Product.*;
+
 public class MarketAppl {
 
     public static void main(String[] args) {
@@ -59,39 +61,6 @@ public class MarketAppl {
         //method for printing all non-food products
         nonFoodProducts(products);
 
-    }//end of main
-
-    public static void printProducts(Product[] products){
-        for (int i = 0; i < products.length; i++) {
-            System.out.println(products[i]);
-        }
-    }
-
-    public static double totalPrice(Product[] products){
-        double sum = 0;
-        for (int i = 0; i < products.length; i++) {
-            sum += products[i].getPrice();
-        }
-        return sum;
-    }
-
-    public static Product barcode(Product[] products, long searchedBarcode){
-        for (int i = 0; i < products.length; i++) {
-            if(products[i].getBarCode() == searchedBarcode){
-                return products[i];
-            }
-        }
-        return null;
-    }
-
-    public static void nonFoodProducts(Product[] products){
-        for (int i = 0; i < products.length; i++) {
-            if(!(products[i] instanceof Food)){
-                System.out.println(products[i]);
-            }
-        }
-    }
-
-
+    }//end of main1
 
 }//end of class

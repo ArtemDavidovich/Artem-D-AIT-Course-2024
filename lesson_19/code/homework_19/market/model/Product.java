@@ -57,4 +57,35 @@ public class Product {
     public int hashCode() {
         return Objects.hash(price, name, barCode);
     }
+
+    public static void printProducts(Product[] products){
+        for (int i = 0; i < products.length; i++) {
+            System.out.println(products[i]);
+        }
+    }
+
+    public static double totalPrice(Product[] products){
+        double sum = 0;
+        for (int i = 0; i < products.length; i++) {
+            sum += products[i].getPrice();
+        }
+        return sum;
+    }
+
+    public static Product barcode(Product[] products, long searchedBarcode){
+        for (int i = 0; i < products.length; i++) {
+            if(products[i].getBarCode() == searchedBarcode){
+                return products[i];
+            }
+        }
+        return null;
+    }
+
+    public static void nonFoodProducts(Product[] products){
+        for (int i = 0; i < products.length; i++) {
+            if(!(products[i] instanceof Food)){
+                System.out.println(products[i]);
+            }
+        }
+    }
 }
