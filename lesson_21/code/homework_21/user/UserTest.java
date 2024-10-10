@@ -62,8 +62,6 @@ class UserTest {
         assertEquals("peter@mail.de", user.getEmail()); //email didn't change
     }
 
-
-
     @Test
     void setPassword() {
     }
