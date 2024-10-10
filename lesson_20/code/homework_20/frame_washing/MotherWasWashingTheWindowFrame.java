@@ -24,8 +24,7 @@ public class MotherWasWashingTheWindowFrame {
         System.out.println("-----------------------");
 
         //number of symbols in the string
-        String[] symbols = str.split("");
-        System.out.println("There are " + symbols.length + " in your string.");
+        System.out.println("There are " + str.length() + " in your string.");
         System.out.println("-----------------------");
 
         //number of upper case symbols in the string

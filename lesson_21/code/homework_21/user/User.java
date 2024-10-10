@@ -1,4 +1,4 @@
-package classwork_21.user;
+package homework_21.user;
 
 public class User {
 

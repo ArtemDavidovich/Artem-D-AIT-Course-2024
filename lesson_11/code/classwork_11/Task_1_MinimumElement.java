@@ -21,7 +21,7 @@ public class Task_1_MinimumElement {
             }
         }
 
-        System.out.println(" Minimum element: " + min + ". Its index: " + indexMin + ".");
+        System.out.println("Minimum element: " + min + ". Its index: " + indexMin + ".");
 
         int max = array[0];
         int indexMax = 0;
