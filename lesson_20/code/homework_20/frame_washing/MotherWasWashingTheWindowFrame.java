@@ -61,11 +61,11 @@ public class MotherWasWashingTheWindowFrame {
         //which type of sentence is it
         String lastCh = str.trim(); //removing spaces in the beginning and in the ending of the string
         char lastSymbol = str.charAt(lastCh.length() - 1); //extracting the last symbol for Character method isLetterOrDigit
-        if(Character.isLetterOrDigit(lastSymbol) || lastCh.endsWith(".")){
+        if(Character.isLetterOrDigit(lastSymbol) || Character.valueOf(lastSymbol) == '.'){
             System.out.println("The sentence is declarative.");
-        } else if (lastCh.endsWith("!")){
+        } else if (Character.valueOf(lastSymbol) == '!'){
             System.out.println("The sentence is exclamatory.");
-        } else if (lastCh.endsWith("?")){
+        } else if (Character.valueOf(lastSymbol) == '?'){
             System.out.println("The sentence is interrogative.");
         }
 
