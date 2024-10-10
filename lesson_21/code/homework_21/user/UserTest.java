@@ -28,35 +28,35 @@ class UserTest {
     }
 
     @Test
-    void testEmailNoAt() {
+    void testEmailNoAt() { //checking if there is no AT
         String email = "petermail.de"; //wrong email
         user.setEmail(email);
         assertEquals("peter@mail.de", user.getEmail()); //email didn't change
     }
 
     @Test
-    void testEmailTwoAt() {
+    void testEmailTwoAt() { //checking if there are two ATs
         String email = "peter@@mail.de"; //wrong email
         user.setEmail(email);
         assertEquals("peter@mail.de", user.getEmail()); //email didn't change
     }
 
-    @Test
-    void testEmailDotAfterAt() {
+    @Test //
+    void testEmailNoDotAfterAt() { //checking if there is no dot after AT
         String email = "peter@mailde"; //wrong email
         user.setEmail(email);
         assertEquals("peter@mail.de", user.getEmail()); //email didn't change
     }
 
     @Test
-    void testEmailDotNotInTheEnd() {
+    void testEmailDotNotInTheEnd() { //checking if the dot is too close to the end
         String email = "peter@maild.e"; //wrong email
         user.setEmail(email);
         assertEquals("peter@mail.de", user.getEmail()); //email didn't change
     }
 
     @Test
-    void testEmailForbiddenSymbols() {
+    void testEmailForbiddenSymbols() { //checking if there is forbidden symbol in e-mail
         String email = "peter/@mail.de"; //wrong email
         user.setEmail(email);
         assertEquals("peter@mail.de", user.getEmail()); //email didn't change
