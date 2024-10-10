@@ -15,12 +15,10 @@ public class Integers {
         System.out.println("---------------------------------");
 
         String[] strings = str.split(" "); //making String an array without spaces
-        Integer[] integers = new Integer[strings.length]; //setting up Integer array with the same number of elements with String array
         int sum = 0;
 
-        for (int i = 0, j = 0; i < strings.length; i++, j++) {
-            integers[j] = Integer.parseInt(strings[i]); //transferring String-elements to Integer-elements
-            sum += integers[j];
+        for (int i = 0; i < strings.length; i++) {
+            sum += Integer.parseInt(strings[i]); //transferring String-elements to Integer-elements
         }
 
         System.out.println("The sum of the numbers in the string is " + sum);

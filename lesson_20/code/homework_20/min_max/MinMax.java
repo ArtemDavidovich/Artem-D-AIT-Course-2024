@@ -13,7 +13,7 @@ public class MinMax {
         //defining all correct seven types and putting them into a set
         String[] types = {"byte", "short", "char", "int", "long", "float", "double"};
         Set<String> typesSet = new HashSet<>(Arrays.asList(types));
-        //The Arrays.asList() method converts the array into a list. The HashSet<>(...) constructor converts the list into a set (Set<String>). A set is a collection that does not allow duplicates. Each element in the set is unique.
+        //The Arrays.asList() method converts the array into a list. The HashSet<>(...) constructor converts the list into a set (Set<String>). A set is a collection that does not allow duplicates. Each element in the set is unique. The set can be modified by adding or deleting elements.
 
         Set<String> finalTypes = new HashSet<>(); //creating a new set for types that are in the arguments and are correct
 
