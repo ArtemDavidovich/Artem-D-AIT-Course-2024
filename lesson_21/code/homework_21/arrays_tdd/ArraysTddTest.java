@@ -1,6 +1,7 @@
 package homework_21.arrays_tdd;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,7 +19,7 @@ class ArraysTddTest {
     }
 
     @Test
-    void countIntegers() {
+    void countIntegersTest() {
 
         //expected
         int expected = 5;
@@ -30,7 +31,8 @@ class ArraysTddTest {
     }
 
     @Test
-    void searchMinimumElement(){
+    @DisplayName("Searching for minimum element of array")
+    void searchMinimumElementTest(){
         //expected
         int expected = -20;
 
@@ -41,7 +43,8 @@ class ArraysTddTest {
     }
 
     @Test
-    void searchMaximumElement(){
+    @DisplayName("Searching for maximum element of array")
+    void searchMaximumElementTest(){
         //expected
         int expected = 30;
 
@@ -52,7 +55,8 @@ class ArraysTddTest {
     }
 
     @Test
-    void searchIndexOfMinimumElement(){
+    @DisplayName("Searching for index of minimum element of array")
+    void searchIndexOfMinimumElementTest(){
         //expected
         int expected = 3;
 
@@ -63,7 +67,8 @@ class ArraysTddTest {
     }
 
     @Test
-    void searchIndexOfMaximumElement(){
+    @DisplayName("Searching for index of maximum element of array")
+    void searchIndexOfMaximumElementTest(){
         //expected
         int expected = 4;
 
