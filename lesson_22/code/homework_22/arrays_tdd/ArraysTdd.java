@@ -1,4 +1,4 @@
-package homework_21.arrays_tdd;
+package homework_22.arrays_tdd;
 
 //Задание 2. Разработайте тесты для методов обрабатывающих массивы:
 //
@@ -43,8 +43,28 @@ public class ArraysTdd {
         return Arrays.hashCode(array);
     }
 
+    public int findFiveElement(int[] array){
+        int n = 0;
+        for (int i = 0; i < array.length; i++) {
+            if(i == 4){
+                n = array[i];
+            }
+        }
+        return n;
+    }
+
+    public int countOddIndex(int[] array){
+        int count = 0;
+        for (int i = 0; i < array.length; i++) {
+            if(i % 2 == 1){
+                count++;
+            }
+        }
+        return count;
+    }
+
     //counting integers in array
-    public int countIntegers(int[] array){
+    public int countPositiveIntegers(int[] array){
         int count = 0;
         for (int i = 0; i < array.length; i++) {
             if(array[i] > 0){

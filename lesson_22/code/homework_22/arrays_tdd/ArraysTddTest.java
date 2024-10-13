@@ -1,4 +1,4 @@
-package homework_21.arrays_tdd;
+package homework_22.arrays_tdd;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ArraysTddTest {
 
     ArraysTdd arrayTdd;
-    int[] array = {10, -10, 5, -20, 30}; //3
+    int[] array = {10, -10, 5, -20, 30, -12};
 
     @BeforeEach
     void setUp() {
@@ -19,20 +19,44 @@ class ArraysTddTest {
     }
 
     @Test
-    void countIntegersTest() {
-
+    @DisplayName("Searching for 5th element of array.")
+    void testFindFiveElement(){
         //expected
-        int expected = 5;
+        int expected = 30;
 
         //actual
-        int actual = arrayTdd.countIntegers(array);
+        int actual = arrayTdd.findFiveElement(array);
+
+        assertEquals(expected, actual, "ERROR");
+    }
+
+    @Test
+    @DisplayName("Counting number of elements with odd index.")
+    void testCountOddIndex(){
+        //expected
+        int expected = 3;
+
+        //actual
+        int actual = arrayTdd.countOddIndex(array);
+
+        assertEquals(expected, actual, "ERROR");
+    }
+
+    @Test
+    void testCountIntegers() {
+
+        //expected
+        int expected = 3;
+
+        //actual
+        int actual = arrayTdd.countPositiveIntegers(array);
 
         assertEquals(expected, actual, "Bad Info: ");
     }
 
     @Test
     @DisplayName("Searching for minimum element of array")
-    void searchMinimumElementTest(){
+    void testSearchMinimumElement(){
         //expected
         int expected = -20;
 
@@ -44,7 +68,7 @@ class ArraysTddTest {
 
     @Test
     @DisplayName("Searching for maximum element of array")
-    void searchMaximumElementTest(){
+    void testSearchMaximumElement(){
         //expected
         int expected = 30;
 
@@ -56,9 +80,9 @@ class ArraysTddTest {
 
     @Test
     @DisplayName("Searching for index of minimum element of array")
-    void searchIndexOfMinimumElementTest(){
+    void testSearchIndexOfMinimumElement(){
         //expected
-        int expected = 3;
+        int expected = 5;
 
         //actual
         int actual = arrayTdd.searchIndexOfMinimumElement(array);
@@ -68,7 +92,7 @@ class ArraysTddTest {
 
     @Test
     @DisplayName("Searching for index of maximum element of array")
-    void searchIndexOfMaximumElementTest(){
+    void testSearchIndexOfMaximumElement(){
         //expected
         int expected = 4;
 
