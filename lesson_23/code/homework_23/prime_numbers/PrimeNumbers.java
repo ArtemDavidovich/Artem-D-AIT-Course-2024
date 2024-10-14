@@ -27,9 +27,11 @@ public class PrimeNumbers {
     }
 
     public boolean isPrime(){
-        if(number  != 2 && number != 3 && number != 5 && number != 7) {
-            if (number % 2 == 0 || number % 3 == 0 || number % 5 == 0 || number % 7 == 0) {
-                return false;
+        if(number >= 1) {
+            if (number != 2 && number != 3 && number != 5 && number != 7) {
+                if (number % 2 == 0 || number % 3 == 0 || number % 5 == 0 || number % 7 == 0) {
+                    return false;
+                }
             }
         }
         return true;
