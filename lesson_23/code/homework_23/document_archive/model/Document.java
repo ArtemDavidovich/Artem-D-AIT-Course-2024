@@ -1,4 +1,4 @@
-package homework_23.model;
+package homework_23.document_archive.model;
 
 //Задача 1. Реализуйте класс Document и приложение Archive по аналогии с Book и Library.
 //Уникальный номер документа содержит 10 цифр.

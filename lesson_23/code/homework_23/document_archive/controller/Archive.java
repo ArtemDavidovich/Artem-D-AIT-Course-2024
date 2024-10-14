@@ -1,7 +1,6 @@
-package homework_23.controller;
+package homework_23.document_archive.controller;
 
-import classwork_23.book_library.model.Book;
-import homework_23.model.Document;
+import homework_23.document_archive.model.Document;
 
 public class Archive {
 
