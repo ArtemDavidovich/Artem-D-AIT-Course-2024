@@ -14,7 +14,7 @@ public class VacationCar {
     private String fuel; //type of fuel
     private double costOfFuel; //cost of 1 liter of fuel
     private double consPerHundred; //consumption of fuel per hundred kilometers
-    private int costOfRent; //cost of 1 rent week and we assume that they will have a one-week vacation
+    private int costOfRent; //cost of 1 rent week and we assume that they will have a two-week vacation
 
     public static final double D_COST = 1.6; //diesel price per 1 kilometer
     public static final double B_COST = 1.8; //petrol price per 1 kilometer
@@ -85,7 +85,7 @@ public class VacationCar {
     public static double[] vacationCarTotalPrice(VacationCar[] vacationCars){
         double[] vacationCarTotalPrice = new double[vacationCars.length];
         for (int i = 0, j = 0; i < vacationCars.length; i++, j++) {
-            vacationCarTotalPrice[j] = DISTANCE * vacationCars[i].consPerHundred * vacationCars[i].costOfFuel + vacationCars[i].costOfRent;
+            vacationCarTotalPrice[j] = DISTANCE * vacationCars[i].consPerHundred * vacationCars[i].costOfFuel + vacationCars[i].costOfRent * 2;
         }
         return vacationCarTotalPrice;
     }

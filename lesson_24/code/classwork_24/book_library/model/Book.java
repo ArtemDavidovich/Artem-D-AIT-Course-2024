@@ -1,4 +1,4 @@
-package classwork_23.book_library.model;
+package classwork_24.book_library.model;
 
 // Создать класс Book с полями:
 // long isbn, String title, String author, int yearOfPublishing.
@@ -22,29 +22,24 @@ public class Book {
 //        if(isIsbnValid) {
 //            this.isbn = isbn;
 //        }
-        this.isbn = checkIsbn(isbn);
+        this.isbn = checkAndCountDigit(isbn);
     }
 
-    private long checkIsbn(long isbn){
-        //check length of isbn
-        if(countDigit(isbn)){
-            return isbn;
-        }
-        return -1; // if isbn is invalid
-    }
-
-    private boolean countDigit(long isbn) {
+    private long checkAndCountDigit(long isbn) {
 //        if(String.valueOf(isbn).length() == 13){ - nice variant, but it uses a lot of resources
 //            return true;
 //        }
         //possible with cycle for, while we know the number of iterations
         int count = 0;
         long isbnTemp = isbn;
-        while(isbnTemp / 10 != 0){
+        while(isbnTemp > 0){
             count++;
             isbnTemp /= 10;
         }
-        return count == ISBN_LENGTH;
+        if(count == ISBN_LENGTH){
+            return isbn;
+        }
+        return -1;
     }
 
     //getters and setters
@@ -68,9 +63,8 @@ public class Book {
         return isbn;
     }
 
-    //TODO provide for protection concerning 13 digits
     public void setIsbn(long isbn) {
-        if(countDigit(isbn)){
+        if(checkAndCountDigit(isbn) > 0){
             this.isbn = isbn;
         } else{
             System.out.println("Error! ISBN '" + isbn + "' is invalid.");

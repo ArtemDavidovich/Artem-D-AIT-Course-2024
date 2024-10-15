@@ -1,7 +1,9 @@
-package homework_23.document_archive.model;
+package homework_24.document_archive.model;
 
 //Задача 1. Реализуйте класс Document и приложение Archive по аналогии с Book и Library.
 //Уникальный номер документа содержит 10 цифр.
+
+import java.util.Objects;
 
 public class Document {
 
@@ -12,25 +14,21 @@ public class Document {
 
     //constructor
     public Document(long id) {
-        this.id = checkId(id);
+        this.id = checkIdAndCountDigit(id);
     }
 
-    private long checkId(long id){
-        //checking counted length of id
-        if(countDigit(id)){
+    private long checkIdAndCountDigit(long id){
+        //checking validity of id's length
+        int count = 0;
+        long tempId = id;
+        while(tempId > 0){
+            count++;
+            tempId /= 10;
+        }
+        if (count == ID_LENGTH){
             return id;
         }
         return -1;
-    }
-
-    private boolean countDigit(long id){
-        //checking validity of id's length
-        int count = 0;
-        while(id / 2 != 0){
-            count++;
-            id /= 10;
-        }
-        return count == ID_LENGTH;
     }
 
     //getters and setters
@@ -39,7 +37,7 @@ public class Document {
     }
 
     public void setId(long id) {
-        if(countDigit(id)) {
+        if(checkIdAndCountDigit(id) > 0) {
             this.id = id;
         } else{
             System.out.println("Error! ISBN '" + id + "' is invalid.");
@@ -53,4 +51,17 @@ public class Document {
         sb.append('}');
         return sb.toString();
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Document document)) return false;
+        return id == document.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
+    }
+
 }//end of class
