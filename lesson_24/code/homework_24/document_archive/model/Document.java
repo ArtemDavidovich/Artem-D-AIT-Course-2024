@@ -10,10 +10,14 @@ public class Document {
     public static final int ID_LENGTH = 10;
 
     //field
+    private String title;
+    private String author;
     private long id;
 
     //constructor
-    public Document(long id) {
+    public Document(String title, String author, long id) {
+        this.title = title;
+        this.author = author;
         this.id = checkIdAndCountDigit(id);
     }
 
@@ -32,6 +36,22 @@ public class Document {
     }
 
     //getters and setters
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
     public long getId() {
         return id;
     }
@@ -46,10 +66,11 @@ public class Document {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Document{");
-        sb.append("id=").append(id);
-        sb.append('}');
-        return sb.toString();
+        return "Document{" +
+                "title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", id=" + id +
+                '}';
     }
 
     @Override
