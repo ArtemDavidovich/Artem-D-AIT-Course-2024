@@ -55,7 +55,7 @@ class ArchiveTest {
 
     @Test
     @DisplayName("Deleting document from Archive")
-    void testRemoveBook(){
+    void testRemoveDocument(){
         //remove existing document
         assertEquals(documents[0], archive.removeDocument(111_111_111_0));
         assertEquals(3, archive.size());
