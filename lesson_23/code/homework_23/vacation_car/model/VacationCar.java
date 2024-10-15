@@ -82,7 +82,7 @@ public class VacationCar {
     }
 
     //methods
-    public double[] vacationCarTotalPrice(VacationCar[] vacationCars){
+    public static double[] vacationCarTotalPrice(VacationCar[] vacationCars){
         double[] vacationCarTotalPrice = new double[vacationCars.length];
         for (int i = 0, j = 0; i < vacationCars.length; i++, j++) {
             vacationCarTotalPrice[j] = DISTANCE * vacationCars[i].consPerHundred * vacationCars[i].costOfFuel + vacationCars[i].costOfRent;
@@ -90,7 +90,7 @@ public class VacationCar {
         return vacationCarTotalPrice;
     }
 
-    public void vacationCarBestChoice(VacationCar[] vacationCars){
+    public static VacationCar vacationCarBestChoice(VacationCar[] vacationCars){
         double[] vacationCarBestChoice = vacationCarTotalPrice(vacationCars);
         double minPrice = vacationCarBestChoice[0];
         int minIndex = 0;
@@ -100,6 +100,8 @@ public class VacationCar {
                 minIndex = i;
             }
         }
-        System.out.println("The best option for the family's vacation is: " + vacationCars[minIndex].getBrand() + ". Total cost of the trip is: " + minPrice + ".");
+        System.out.println("Total cost of the trip is: " + minPrice + ".");
+        return vacationCars[minIndex];
     }
+
 }

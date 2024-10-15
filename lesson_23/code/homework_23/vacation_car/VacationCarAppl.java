@@ -10,6 +10,8 @@ package homework_23.vacation_car;
 
 import homework_23.vacation_car.model.VacationCar;
 
+import static homework_23.vacation_car.model.VacationCar.vacationCarBestChoice;
+
 public class VacationCarAppl {
 
     public static void main(String[] args) {
@@ -21,7 +23,7 @@ public class VacationCarAppl {
         vacationCars[3] = new VacationCar("VW","d",6.5,39);
         vacationCars[4] = new VacationCar("Mercedes","b",6.3,49);
 
-        vacationCars[0].vacationCarBestChoice(vacationCars);
+        System.out.println("The best choice for the vacation is: " + vacationCarBestChoice(vacationCars).getBrand());
 
     }//end of main
 

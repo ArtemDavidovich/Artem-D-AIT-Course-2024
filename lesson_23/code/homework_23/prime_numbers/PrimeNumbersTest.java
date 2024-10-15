@@ -19,8 +19,7 @@ class PrimeNumbersTest {
     @Test
     @DisplayName("Checking if the number is prime")
     void testIsPrime(){
-        boolean expected = true;
-        assertEquals(expected, primeNumbers.isPrime(), "Number " + number + " is not prime.");
+        assertTrue(primeNumbers.isPrime(), "Number " + number + " is not prime.");
     }
 
 }//end of class
