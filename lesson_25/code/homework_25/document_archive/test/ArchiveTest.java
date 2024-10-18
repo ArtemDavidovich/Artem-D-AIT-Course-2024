@@ -1,6 +1,7 @@
 package homework_25.document_archive.test;
 
-import homework_25.document_archive.controller.Archive;
+import homework_25.document_archive.dao.Archive;
+import homework_25.document_archive.dao.ArchiveImpl;
 import homework_25.document_archive.model.Document;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -17,7 +18,7 @@ class ArchiveTest {
 
     @BeforeEach
     void setUp() {
-        archive = new Archive(5);
+        archive = new ArchiveImpl(5);
         documents = new Document[5];
         documents[0] = new Document("D1","A1",111_111_111_0);
         documents[1] = new Document("D2","A2",111_111_111_1);
@@ -30,7 +31,7 @@ class ArchiveTest {
     }
 
     @Test
-    @DisplayName("Filling the archive with documents.")
+    @DisplayName("Filling the archive with documents")
     void testFillArchive(){
         assertEquals(documents, archive.fillArchive(documents));
     }
@@ -54,7 +55,6 @@ class ArchiveTest {
     @Test
     @DisplayName("Searching for exact document by its id")
     void testFindDocument(){
-        Document foundDocument = archive.findDocument(111_111_111_0);
         assertEquals(documents[0], archive.findDocument(111_111_111_0));
         assertNull(archive.findDocument(111_111_111_9));
     }
@@ -81,7 +81,7 @@ class ArchiveTest {
     }
 
     @Test
-    @DisplayName("Updating one of the documents in archive.")
+    @DisplayName("Updating one of the documents in archive")
     void testUpdateDocument(){
         Document newDocument = new Document("D5","A3",111_111_111_2);
         assertTrue(archive.updateDocument(newDocument));

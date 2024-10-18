@@ -1,16 +1,15 @@
-package homework_25.document_archive.controller;
+package homework_25.document_archive.dao;
 
-import classwork_25.book_library.controller.Library;
 import homework_25.document_archive.model.Document;
 
-public class Archive {
+public class ArchiveImpl implements Archive{
 
     //fields
     private Document[] documents;
     private int size;
 
     //constructor
-    public Archive(int capacity){
+    public ArchiveImpl(int capacity){
         this.documents = new Document[capacity];
         this.size = 0;
     }

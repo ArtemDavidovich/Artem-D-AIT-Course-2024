@@ -12,7 +12,7 @@ public class Document {
     //field
     private String title;
     private String author;
-    private long id;
+    private final long id;
 
     //constructor
     public Document(String title, String author, long id) {
@@ -22,7 +22,7 @@ public class Document {
     }
 
     private long checkIdAndCountDigit(long id){
-        //checking validity of id's length
+        //checking validity of id length
         int count = 0;
         long tempId = id;
         while(tempId > 0){
@@ -54,14 +54,6 @@ public class Document {
 
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        if(checkIdAndCountDigit(id) > 0) {
-            this.id = id;
-        } else{
-            System.out.println("Error! ISBN '" + id + "' is invalid.");
-        }
     }
 
     @Override

@@ -1,6 +1,6 @@
 package homework_25.document_archive;
 
-import homework_25.document_archive.controller.Archive;
+import homework_25.document_archive.dao.ArchiveImpl;
 import homework_25.document_archive.model.Document;
 
 public class ArchiveAppl {
@@ -13,7 +13,7 @@ public class ArchiveAppl {
         documents[2] = new Document("D3","A3",111_111_111_2);
         documents[3] = new Document("D4","A4",111_111_111_3);
 
-        Archive archive = new Archive(6);
+        ArchiveImpl archive = new ArchiveImpl(6);
 
         archive.fillArchive(documents);
         archive.printDocument();
