@@ -1,7 +1,7 @@
-package homework_25.document_archive;
+package homework_26.document_archive;
 
-import homework_25.document_archive.dao.ArchiveImpl;
-import homework_25.document_archive.model.Document;
+import homework_26.document_archive.dao.ArchiveImpl;
+import homework_26.document_archive.model.Document;
 
 public class ArchiveAppl {
 

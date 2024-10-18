@@ -1,6 +1,6 @@
-package homework_25.document_archive.dao;
+package homework_26.document_archive.dao;
 
-import homework_25.document_archive.model.Document;
+import homework_26.document_archive.model.Document;
 
 public interface Archive {
 

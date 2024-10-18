@@ -1,8 +1,8 @@
-package homework_25.document_archive.test;
+package homework_26.document_archive.test;
 
-import homework_25.document_archive.dao.Archive;
-import homework_25.document_archive.dao.ArchiveImpl;
-import homework_25.document_archive.model.Document;
+import homework_26.document_archive.dao.Archive;
+import homework_26.document_archive.dao.ArchiveImpl;
+import homework_26.document_archive.model.Document;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
