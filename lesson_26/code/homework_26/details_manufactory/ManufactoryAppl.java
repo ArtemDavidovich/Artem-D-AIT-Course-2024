@@ -6,6 +6,6 @@ public class ManufactoryAppl {
 
 
 
-    }//enв ща main
+    }//end of main
 
 }//end of class
