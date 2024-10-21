@@ -32,7 +32,7 @@ class StockImplTest {
 
     @Test
     @DisplayName("Adding detail to Stock")
-    void addDetail() {
+    void testAddDetail() {
         //no null adding
         assertFalse(stock.addDetail(null));
         //no duplicate adding
@@ -48,28 +48,28 @@ class StockImplTest {
 
     @Test
     @DisplayName("Searching for exact detail by its barCode")
-    void findDetail() {
+    void testFindDetail() {
         assertEquals(details[0], stock.findDetail(1_111_111_111_110L));
         assertNull(stock.findDetail(1_111_111_111_119L));
     }
 
     @Test
     @DisplayName("Updating one of the details in Stock")
-    void updateDetail() {
+    void testUpdateDetail() {
         Detail newDetail = new Gear(1_111_111_111_111L, 3.5,"M1", "V4",0.5,1.5,18);
         assertEquals(newDetail, stock.updateDetail(newDetail,1_111_111_111_111L));
     }
 
     @Test
     @DisplayName("Deleting detail from Stock")
-    void removeDetail() {
+    void testRemoveDetail() {
         assertEquals(details[0], stock.removeDetail(1_111_111_111_110L));
         assertEquals(3, stock.quantity());
     }
 
     @Test
     @DisplayName("Calculating total weight of details in Stock")
-    void totalWeight() {
+    void testTotalWeight() {
         double res = 0;
         for (int i = 0; i < stock.quantity(); i++) {
             res += details[i].getWeight();
@@ -79,7 +79,7 @@ class StockImplTest {
 
     @Test
     @DisplayName("Calculating average weight of details in Stock")
-    void averageWeight() {
+    void testAverageWeight() {
         double res = 0;
         for (int i = 0; i < stock.quantity(); i++) {
             res += details[i].getWeight();
