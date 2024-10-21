@@ -1,4 +1,4 @@
-package homework_27.pet;
+package homework_26.pet;
 
 //Task 1. The Pet class has the following fields:
 //
@@ -16,9 +16,9 @@ package homework_27.pet;
 //Create a HouseAppl that has a main method. Place 2 dogs and 3 cats in the house.
 //Simulate life in this house during the day.
 
-import homework_27.pet.model.Cat;
-import homework_27.pet.model.Dog;
-import homework_27.pet.model.Pet;
+import homework_26.pet.model.Cat;
+import homework_26.pet.model.Dog;
+import homework_26.pet.model.Pet;
 
 public class PetAppl {
 

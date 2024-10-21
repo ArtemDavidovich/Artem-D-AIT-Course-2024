@@ -1,4 +1,4 @@
-package homework_27.pet.model;
+package homework_26.pet.model;
 
 public class Pet {
 

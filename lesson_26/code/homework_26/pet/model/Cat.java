@@ -1,4 +1,4 @@
-package homework_27.pet.model;
+package homework_26.pet.model;
 
 //Task 1. The Pet class has the following fields:
 //
