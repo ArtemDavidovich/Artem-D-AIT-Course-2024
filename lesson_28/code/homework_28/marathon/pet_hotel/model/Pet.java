@@ -1,5 +1,7 @@
 package homework_28.marathon.pet_hotel.model;
 
+import java.util.Objects;
+
 public abstract class Pet {
 
     //fields
@@ -85,5 +87,17 @@ public abstract class Pet {
         sb.append(", termOfStay=").append(termOfStay);
         sb.append('}');
         return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Pet pet)) return false;
+        return id == pet.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 }
