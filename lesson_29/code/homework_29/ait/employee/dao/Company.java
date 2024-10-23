@@ -35,4 +35,6 @@ public interface Company {
 
     Employee[] findEmployeeSalaryRange(double min, double max);
 
+    Employee[] findEmployeeSalesValue(double salesValue);
+
 }

@@ -111,6 +111,12 @@ public class CompanyImpl implements Company{
         return findEmployeesByPredicate(employee -> employee.calcSalary() >= min && employee.calcSalary() <= max);
     }
 
+    @Override
+    public Employee[] findEmployeeSalesValue(double salesValue) {
+        return findEmployeesByPredicate(employee -> employee instanceof SalesManager && ((SalesManager) employee).getSalesValue() == salesValue);
+    }
+
+
     private Employee[] findEmployeesByPredicate(Predicate<Employee> predicate){
         int count = 0;
         for (int i = 0; i < size; i++) {
