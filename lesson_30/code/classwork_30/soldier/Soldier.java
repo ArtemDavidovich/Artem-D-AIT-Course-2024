@@ -1,4 +1,4 @@
-package soldier;
+package classwork_30.soldier;
 
 //- name: String
 //- height: int

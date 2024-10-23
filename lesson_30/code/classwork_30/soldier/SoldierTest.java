@@ -1,4 +1,4 @@
-package soldier;
+package classwork_30.soldier;
 
 //- "John", 182, 82.3, 91
 //- "Peter", 175, 77.1, 75
@@ -11,8 +11,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.Comparator;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class SoldierTest {
 
@@ -110,7 +108,7 @@ class SoldierTest {
 
         Arrays.sort(soldiers, (s1, s2) -> (s1.getProfile() - s2.getProfile()));
 
-        System.out.println("----------Print after sorting by name and height------------");
+        System.out.println("----------Print after sorting by profile------------");
         printArray(soldiers);
 
         //create pattern for search
