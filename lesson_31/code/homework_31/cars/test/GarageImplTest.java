@@ -1,5 +1,6 @@
 package homework_31.cars.test;
 
+import classwork_19.compare_computers.CompareComputers;
 import homework_31.cars.dao.Garage;
 import homework_31.cars.dao.GarageImpl;
 import homework_31.cars.model.Car;
@@ -10,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.Comparator;
 
+import static java.util.Comparator.nullsLast;
 import static org.junit.jupiter.api.Assertions.*;
 
 class GarageImplTest {
@@ -105,7 +107,7 @@ class GarageImplTest {
     @Test
     @DisplayName("Checking sorting by model")
     void testSortingByModel() {
-        Comparator<Car> comparatorModel = Comparator.nullsLast((c1, c2) -> c1.getModel().compareTo(c2.getModel()));
+        Comparator<Car> comparatorModel = nullsLast((c1, c2) -> c1.getModel().compareTo(c2.getModel()));
         Arrays.sort(cars, comparatorModel);
         assertArrayEquals(cars, garage.sortCarsByModel());
     }
@@ -113,7 +115,7 @@ class GarageImplTest {
     @Test
     @DisplayName("Checking sorting by color")
     void testSortingByColor() {
-        Comparator<Car> comparatorColor = Comparator.nullsLast((c1, c2) -> c1.getColor().compareTo(c2.getColor()));
+        Comparator<Car> comparatorColor = nullsLast((c1, c2) -> c1.getColor().compareTo(c2.getColor()));
         Arrays.sort(cars, comparatorColor);
         assertArrayEquals(cars, garage.sortCarsByColor());
     }
@@ -121,7 +123,7 @@ class GarageImplTest {
     @Test
     @DisplayName("Checking sorting by company")
     void testSortingByCompany() {
-        Comparator<Car> comparatorCompany = Comparator.nullsLast((c1, c2) -> c1.getCompany().compareTo(c2.getCompany()));
+        Comparator<Car> comparatorCompany = nullsLast((c1, c2) -> c1.getCompany().compareTo(c2.getCompany()));
         Arrays.sort(cars, comparatorCompany);
         assertArrayEquals(cars, garage.sortCarsByCompany());
     }
@@ -129,7 +131,7 @@ class GarageImplTest {
     @Test
     @DisplayName("Checking sorting by engine")
     void testSortingByEngine() {
-        Comparator<Car> comparatorEngine = Comparator.nullsLast((c1, c2) -> Double.compare(c1.getEngine(), c2.getEngine()));
+        Comparator<Car> comparatorEngine = nullsLast((c1, c2) -> Double.compare(c1.getEngine(), c2.getEngine()));
         Arrays.sort(cars, comparatorEngine);
         assertArrayEquals(cars, garage.sortCarsByEngine());
     }

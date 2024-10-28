@@ -58,7 +58,7 @@ class TowerTest {
 
     //sorting by 3 fields
     @Test
-    @DisplayName("Sorting by two criteria")
+    @DisplayName("Sorting by three criteria")
     void testSortByNameAndHeightAndYear(){
         Comparator<Tower> comparatorNameAndHeightAndYear = new Comparator<Tower>() {
             @Override

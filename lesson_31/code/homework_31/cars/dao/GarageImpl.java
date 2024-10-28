@@ -6,19 +6,19 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.function.Predicate;
 
-public class GarageImpl implements Garage{
+public class GarageImpl implements Garage {
 
     private Car[] cars;
     private int size;
 
-    public GarageImpl(int capacity){
+    public GarageImpl(int capacity) {
         this.cars = new Car[capacity];
         this.size = 0;
     }
 
     @Override
     public boolean addCar(Car car) {
-        if(car == null || size == cars.length || findCarByRegNumber(car.getRegNumber()) != null) {
+        if (car == null || size == cars.length || findCarByRegNumber(car.getRegNumber()) != null) {
             return false;
         }
         cars[size++] = car;
@@ -28,7 +28,7 @@ public class GarageImpl implements Garage{
     @Override
     public Car findCarByRegNumber(String regNumber) {
         for (int i = 0; i < size; i++) {
-            if(cars[i].getRegNumber().equals(regNumber)){
+            if (cars[i].getRegNumber().equals(regNumber)) {
                 return cars[i];
             }
         }
@@ -86,7 +86,7 @@ public class GarageImpl implements Garage{
     @Override
     public Car removeCar(String regNumber) {
         for (int i = 0; i < size; i++) {
-            if(cars[i].getRegNumber().equals(regNumber)){
+            if (cars[i].getRegNumber().equals(regNumber)) {
                 //putting copy of last element instead of victim
                 Car victim = cars[i];
                 cars[i] = cars[size - 1];
@@ -103,8 +103,9 @@ public class GarageImpl implements Garage{
     public boolean updateCar(Car car) {
         removeCar(car.getRegNumber());
         addCar(car);
+        Comparator<Car> comparatorColor = Comparator.nullsLast((c1, c2) -> c1.getRegNumber().compareTo(c2.getRegNumber()));
         for (int i = 0; i < size; i++) {
-            if(cars[i] == car){
+            if (cars[i] == car) {
                 return true;
             }
         }
@@ -125,17 +126,17 @@ public class GarageImpl implements Garage{
     }
 
     //в этот метод передаем логическое выражение, которое будет тестировать объекты типа Car
-    private Car[] findCarsByPredicate(Predicate<Car> predicate){
+    private Car[] findCarsByPredicate(Predicate<Car> predicate) {
         int count = 0;
         for (int i = 0; i < size; i++) {
-            if(predicate.test(cars[i])){ //объект проходит тест
+            if (predicate.test(cars[i])) { //объект проходит тест
                 count++;
             }
         }
         //читаем массив и переносим результаты
         Car[] res = new Car[count];
-        for (int i = 0, j = 0 ; j < res.length; i++) {
-            if(predicate.test(cars[i])){
+        for (int i = 0, j = 0; j < res.length; i++) {
+            if (predicate.test(cars[i])) {
                 res[j++] = cars[i];
             }
         }

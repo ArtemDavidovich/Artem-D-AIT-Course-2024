@@ -2,6 +2,8 @@ package homework_31.cars.model;
 
 import java.util.Objects;
 
+import static java.util.Comparator.nullsLast;
+
 public class Car implements Comparable<Car>{
 
     private String regNumber;
