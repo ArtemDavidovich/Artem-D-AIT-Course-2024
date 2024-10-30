@@ -33,6 +33,7 @@ public class DateOperation {
                 count++;
             }
         }
+
         String[] specialDates = new String[count];
         String[] specialDates2 = new String[count];
         for (int i = 0, j = 0, k = 0; i < dates.length; i++) {
@@ -46,19 +47,16 @@ public class DateOperation {
             }
             dates[i] = strResult;
         }
-        Comparator<String> comparator = null;
-        Arrays.sort(dates, comparator);
-        comparator = (s1, s2) -> {
-            String[] firstArray = s1.split("-");
-            reverseArray(firstArray);
-            String str1 = String.join("", firstArray);
 
-            String[] secondArray = s2.split("-");
-            reverseArray(secondArray);
-            String str2 = String.join("", secondArray);
-
-            return str1.compareTo(str2);
+        Comparator<String> comparator = new Comparator<String>() {
+            @Override
+            public int compare(String s1, String s2) {
+                return s1.compareTo(s2);
+            }
         };
+
+        Arrays.sort(dates, comparator);
+
         for (int i = 0, j = 0, k = 0; j < specialDates.length && k < specialDates2.length; i++) {
             if (dates[i].equals(specialDates[j])) {
                 dates[i] = specialDates2[k];
@@ -67,23 +65,6 @@ public class DateOperation {
             }
         }
         return dates;
-    }
-
-    public static String[] reverseArray(String[] array){
-        int start = 0;
-        int end = array.length - 1;
-
-        while (start < end) {
-            // Swap elements at start and end
-            String temp = array[start];
-            array[start] = array[end];
-            array[end] = temp;
-
-            // Move towards the center
-            start++;
-            end--;
-        }
-        return array;
     }
 
 }//end of class
