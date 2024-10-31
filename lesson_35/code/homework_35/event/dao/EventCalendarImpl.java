@@ -9,8 +9,8 @@ public class EventCalendarImpl implements EventCalendar{
 
     Comparator<Event> comparator = Comparator.nullsLast((e1, e2) -> Integer.compare(e1.getId(), e2.getId()));
 
-    Event[] events;
-    int size;
+    private Event[] events;
+    private int size;
 
     public EventCalendarImpl(int quantity) {
         this.events = new Event[quantity];

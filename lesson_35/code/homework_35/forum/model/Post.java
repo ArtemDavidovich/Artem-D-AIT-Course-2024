@@ -1,6 +1,7 @@
 package homework_35.forum.model;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Post implements Comparable<Post>{
 
@@ -50,10 +51,37 @@ public class Post implements Comparable<Post>{
         this.date = date;
     }
 
-    
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Post post)) return false;
+        return postId == post.postId;
+    }
 
     @Override
-    public int compareTo(Post o) {
+    public int hashCode() {
+        return Objects.hashCode(postId);
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Post{");
+        sb.append("postId=").append(postId);
+        sb.append(", title='").append(title).append('\'');
+        sb.append(", author='").append(author).append('\'');
+        sb.append(", content='").append(content).append('\'');
+        sb.append(", date=").append(date);
+        sb.append(", likes=").append(likes);
+        sb.append('}');
+        return sb.toString();
+    }
+
+    public int addLike(){
         return 0;
+    }
+
+    @Override
+    public int compareTo(Post post) {
+        return this.getAuthor().compareTo(post.getAuthor());
     }
 }
