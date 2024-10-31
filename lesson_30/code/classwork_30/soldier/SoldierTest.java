@@ -112,7 +112,7 @@ class SoldierTest {
         printArray(soldiers);
 
         //create pattern for search
-        Soldier pattern = new Soldier(null,0,0,91);
+        Soldier pattern = new Soldier("Gtr",123,57,91);
         int index = Arrays.binarySearch(soldiers,pattern,(s1, s2) -> (s1.getProfile() - s2.getProfile()));
         System.out.println("Index = " + index);
 

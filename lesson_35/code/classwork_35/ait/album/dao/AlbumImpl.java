@@ -3,8 +3,16 @@ package classwork_35.ait.album.dao;
 import classwork_35.ait.album.model.Photo;
 
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.Comparator;
 
 public class AlbumImpl implements Album{
+
+    //Comparator sort by albumId then by photoId
+    Comparator<Photo> comparator = Comparator.nullsLast((p1, p2) -> {
+        int res = Integer.compare(p1.getAlbumId(), p2.getAlbumId());
+        return res != 0 ? res : Integer.compare(p1.getPhotoId(), p2.getPhotoId());
+    });
 
     private Photo[] photos;
     private int size;
@@ -15,21 +23,52 @@ public class AlbumImpl implements Album{
 
     @Override
     public boolean addPhoto(Photo photo) {
-        return false;
+        if(photo == null || size == photos.length || getPhotoFromAlbum(photo.getAlbumId(), photo.getPhotoId()) != null){
+            return false;
+        }
+
+        //find index where to insert new photo
+//        int index = Arrays.binarySearch(photos, 0, size, photo, comparator);
+//        index = - index - 1;
+//
+//        System.arraycopy(photos, index, photos, index + 1, size - index);
+
+        photos[size++] = photo;
+        Arrays.sort(photos, comparator);
+
+        return true;
+
     }
 
     @Override
     public boolean removePhoto(int albumId, int photoId) {
+        for (int i = 0; i < size; i++) {
+            if(photos[i].getAlbumId() == albumId && photos[i].getPhotoId() == photoId){
+                System.arraycopy(photos, i + 1, photos, i, size - i - 1);
+                photos[--size] = null;
+                return true;
+            }
+        }
         return false;
     }
 
     @Override
     public boolean updatePhoto(int albumId, int photoId, String url) {
-        return false;
+        Photo photo = getPhotoFromAlbum(albumId, photoId);
+        if(photo == null){
+            return false;
+        }
+        photo.setUrl(url);
+        return true;
     }
 
     @Override
     public Photo getPhotoFromAlbum(int albumId, int photoId) {
+        for (int i = 0; i < size; i++) {
+            if(photos[i].getAlbumId() == albumId && photos[i].getPhotoId() == photoId){
+                return photos[i];
+            }
+        }
         return null;
     }
 
@@ -39,12 +78,20 @@ public class AlbumImpl implements Album{
     }
 
     @Override
-    public Photo[] getPhotoBetweenDates(LocalDate dateFrom, LocalDate dateTo) {
+    public Photo[] getPhotoBetweenDate(LocalDate dateFrom, LocalDate dateTo) {
         return new Photo[0];
     }
 
     @Override
     public int size() {
-        return 0;
+        return size;
     }
-}
+
+    @Override
+    public void printPhoto() {
+        for (int i = 0; i < size; i++) {
+            System.out.println(photos[i]);
+        }
+    }
+
+}//end of class

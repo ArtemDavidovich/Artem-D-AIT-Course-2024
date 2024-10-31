@@ -71,9 +71,9 @@ public class Photo implements Comparable<Photo>{
         return Objects.hash(albumId, photoId);
     }
 
-
     @Override
     public int compareTo(Photo o) {
         return this.getDate().compareTo(o.getDate());
     }
-}
+
+}//end of class
