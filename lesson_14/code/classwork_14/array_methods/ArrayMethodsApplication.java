@@ -7,7 +7,7 @@ public class ArrayMethodsApplication {
         //-----------------------------CLASS-WORK-14----------------------------------------
 
 //        //create array with random numbers
-//        int[] myArray = ArrayMethods.fillArray(0, 100, 10);
+//        int[] myArray = ArrayMethods.fillRandomArray(0, 100, 10);
 //
 //        //print array
 //        ArrayMethods.printArray(myArray);

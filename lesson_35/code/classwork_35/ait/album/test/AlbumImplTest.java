@@ -79,17 +79,17 @@ class AlbumImplTest {
     }
 
     @Test
-    @DisplayName("")
-    void testGetAllPhotoFrom() {
+    @DisplayName("Checking finding all photos from one album")
+    void testGetAllPhotoFromAlbum() {
         Photo[] expected = {photos[3], photos[4]};
-        Photo[] actual = album.getAllPhotoFrom(2);
+        Photo[] actual = album.getAllPhotoFromAlbum(2);
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    @DisplayName("")
+    @DisplayName("Checking finding all photos in exact period")
     void testGetPhotoBetweenDates() {
-        Photo[] actual = album.getPhotoBetweenDate(now.minusDays(2).toLocalDate(), now.minusDays(6).toLocalDate());
+        Photo[] actual = album.getPhotoBetweenDate(now.minusDays(6).toLocalDate(), now.minusDays(2).toLocalDate());
         Photo[] expected = {photos[5], photos[4], photos[2]};
         Arrays.sort(expected, comparator);
         Arrays.sort(actual, comparator);
@@ -97,7 +97,7 @@ class AlbumImplTest {
     }
 
     @Test
-    @DisplayName("")
+    @DisplayName("Checking actual size")
     void testSize() {
         assertEquals(6, album.size());
     }

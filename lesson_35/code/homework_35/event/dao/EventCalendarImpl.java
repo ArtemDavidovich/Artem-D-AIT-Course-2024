@@ -71,4 +71,4 @@ public class EventCalendarImpl implements EventCalendar{
         return size;
     }
 
-}
+}//end of class
