@@ -74,7 +74,7 @@ public class Athlete implements Comparable<Athlete>{
 
     @Override
     public String toString() {
-        return String.format("Last name: %s, First name: %s, Reg. number: %d, Club: %s, Result: %.2f сек",
+        return String.format("Last name: %s, First name: %s, Reg. number: %d, Club: %s, Result: %.2f sek",
                 lastName, firstName, regNumber, club, result);
     }
 
