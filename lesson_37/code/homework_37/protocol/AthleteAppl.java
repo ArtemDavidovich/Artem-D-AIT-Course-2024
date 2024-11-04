@@ -39,7 +39,7 @@ public class AthleteAppl {
         //printing final protocol
         System.out.println("\nFinal protocol:");
         for (int i = 0; i < athletes.size(); i++) {
-            System.out.printf("Место %d: %s%n", i + 1, athletes.get(i));
+            System.out.printf("Place %d: %s%n", i + 1, athletes.get(i));
         }
 
     }//end of main
