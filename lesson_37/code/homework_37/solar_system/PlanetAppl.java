@@ -9,13 +9,12 @@ package homework_37.solar_system;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.List;
 
 public class PlanetAppl {
 
     public static void main(String[] args) {
 
-        List<Planet> planets = new ArrayList<>();
+        ArrayList<Planet> planets = new ArrayList<>();
 
         planets.add(new Planet("Venus", 108.2, 4.867e24, 0));
         planets.add(new Planet("Saturn", 1427, 5.683e26, 83));

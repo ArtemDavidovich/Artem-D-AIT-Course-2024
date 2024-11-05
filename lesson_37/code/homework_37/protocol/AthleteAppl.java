@@ -3,7 +3,6 @@ package homework_37.protocol;
 //Создайте приложение, которое позволит ввести в компьютер результаты спортсменов и получить итоговый протокол соревнования.
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class AthleteAppl {
@@ -12,7 +11,7 @@ public class AthleteAppl {
 
         //setting scanner for input
         Scanner scanner = new Scanner(System.in);
-        List<Athlete> athletes = new ArrayList<>();
+        ArrayList<Athlete> athletes = new ArrayList<>();
 
         System.out.println("Input the protocol (10 athletes):");
 

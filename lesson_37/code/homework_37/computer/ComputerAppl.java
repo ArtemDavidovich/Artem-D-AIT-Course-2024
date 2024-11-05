@@ -17,7 +17,7 @@ public class ComputerAppl {
     public static void main(String[] args) {
 
         //creating ArrayList
-        List<Computer> computers = new ArrayList<>();
+        ArrayList<Computer> computers = new ArrayList<>();
 
         //adding elements
         computers.add(new Computer(1_111_111_111_110L,"i7", 8,256,"Acer",1200));
