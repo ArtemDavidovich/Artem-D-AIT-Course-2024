@@ -75,12 +75,12 @@ public class SupermarketImpl implements Supermarket{
                 expiredProducts.add(product);
             }
         }
-        return expiredProducts; // Return list of expired products
+        return expiredProducts;
     }
 
     @Override
     public int skuQuantity() {
-        return products.size(); // Return the total number of products
+        return products.size();
     }
 
 }//end of class
