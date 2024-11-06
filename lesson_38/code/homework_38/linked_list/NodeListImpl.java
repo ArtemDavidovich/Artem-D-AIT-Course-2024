@@ -136,25 +136,21 @@ public class NodeListImpl<E> implements NodeList<E> {
     @Override
     public int lastIndexOf(Object o) {
         int index = 0;
+        int lastIndex = -1;
         if (o != null) { // внутри узла не null и он есть
-            for (Node<E> node = last; node != null; node = node.prev, index--) { // цикл, который перебирает узлы
-
-//                for (int i = 0;  условие  ; i--) {
-//
-//                }
-
+            for (Node<E> node = first; node != null; node = node.next, index++) { // цикл, который перебирает узлы
                 if (o.equals(node.data)) {
-                    return index;
+                    lastIndex = index;
                 }
             }
         } else { // внутри узла null
-            for (Node<E> node = last; node != null; node = node.prev, index--) {
+            for (Node<E> node = first; node != null; node = node.next, index++) {
                 if (o == node.data) { // null можно сравнивать через ==
-                    return index;
+                    lastIndex = index;
                 }
             }
         }
-        return -1; // объект o не найден в списке
+        return lastIndex; // объект o не найден в списке
     }
 
     @Override
