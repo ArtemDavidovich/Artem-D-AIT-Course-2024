@@ -20,7 +20,7 @@ public class SupermarketImplTest {
         supermarket = new SupermarketImpl();
 
         supermarket.addProduct(new Product(1001, "Milk", "Dairy", "BrandA", 1.5, LocalDate.of(2023, 10, 20)));
-        supermarket.addProduct(new Product(1002, "Bread", "Bakery", "BrandB", 1.0, LocalDate.of(2023, 11, 10)));
+        supermarket.addProduct(new Product(1002, "Bread", "Bakery", "BrandB", 1.0, LocalDate.of(2024, 11, 10)));
         supermarket.addProduct(new Product(1003, "Cheese", "Dairy", "BrandA", 3.0, LocalDate.of(2023, 10, 15)));
     }
 
