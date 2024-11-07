@@ -25,7 +25,7 @@ public class FriendsAppl {
     }//end of main
 
     private static List<String> findCommonFriends(List<String> friendsA, List<String> friendsB) {
-        //HashSet<String> setA = new HashSet<>(friendsA);
+        HashSet<String> setA = new HashSet<>(friendsA);
         List<String> commonFriends = new ArrayList<>();
 
         // обойдем setA и по ходу будем сравнивать элементы со списком friendsB
@@ -36,7 +36,7 @@ public class FriendsAppl {
         }
         // а если их нет?
         if(commonFriends.isEmpty()){
-            System.out.println("There is no any common friends!");
+            System.out.println("There are no any common friends!");
             return null;
         }
 
