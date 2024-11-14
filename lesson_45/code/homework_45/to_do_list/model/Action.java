@@ -1,10 +1,11 @@
 package homework_45.to_do_list.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
-public class Action {
+public class Action implements Serializable {
 
     private int id;
     private String actionDescription;

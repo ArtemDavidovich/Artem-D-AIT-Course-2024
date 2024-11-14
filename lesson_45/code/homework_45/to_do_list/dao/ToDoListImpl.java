@@ -2,18 +2,16 @@ package homework_45.to_do_list.dao;
 
 import homework_45.to_do_list.model.Action;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ToDoListImpl implements ToDoList{
 
     @Override
-    public void addActionToFile(Action action) {
-        try (FileOutputStream fout = new FileOutputStream("to_do_list.txt", true)) {
-            String str = action.toString();
-            fout.write(str.getBytes());
+    public void addActionToFile(Set<Action> actions) {
+        try (ObjectOutputStream oos = new ObjectOutputStream (new FileOutputStream("to_do_list.dat", true))) {
+            oos.writeObject(actions);
 
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -22,7 +20,7 @@ public class ToDoListImpl implements ToDoList{
 
     @Override
     public void clearFile() {
-        try (FileOutputStream fout = new FileOutputStream("to_do_list.txt")) {
+        try (FileOutputStream fout = new FileOutputStream("to_do_list.dat")) {
             //File opening without inputting new data just makes the file clear
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -31,13 +29,11 @@ public class ToDoListImpl implements ToDoList{
 
     @Override
     public void printFile() {
-        try (FileInputStream fin = new FileInputStream("to_do_list.txt")) {
-            int l = fin.available();
-            for (int i = 0; i < l; i++) {
-              char y = (char) fin.read();
-                System.out.print(y);
-            }
-        } catch (IOException e) {
+        try (ObjectInputStream ois = new ObjectInputStream (new FileInputStream("to_do_list.dat"))) {
+            Set<Action> actionSet = new HashSet<>();
+            actionSet = (Set<Action>) ois.readObject();
+                System.out.print(actionSet);
+            } catch (IOException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }

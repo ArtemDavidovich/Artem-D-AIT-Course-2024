@@ -1,6 +1,5 @@
-package classwork_45.employee_save_read;
+package homework_45.employee_save_read;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -11,8 +10,6 @@ import java.util.Set;
 public class SaveEmployeeAppl {
 
     public static void main(String[] args) {
-
-
 
     Address address1 = new Address("Isny", "Maierhoefener Strasse", 25, 6, 88316);
     Address address2 = new Address("Isny", "Maierhoefener Strasse", 25, 5, 88316);

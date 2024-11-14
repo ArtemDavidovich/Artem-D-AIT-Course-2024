@@ -6,6 +6,8 @@ import homework_45.to_do_list.dao.ToDoListImpl;
 import homework_45.to_do_list.model.Action;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ToDoListAppl {
 
@@ -17,13 +19,13 @@ public class ToDoListAppl {
         Action a2 = new Action(2, "Dentist", LocalDate.of(2025, 2, 25));
         Action a3 = new Action(3, "Buy food supplies", LocalDate.of(2024, 11, 15));
 
+        Set<Action> actions = new HashSet<>();
+
         //clearing the file before running the program
         toDoList.clearFile();
 
         //first try, adding actions to the file
-        toDoList.addActionToFile(a1);
-        toDoList.addActionToFile(a2);
-        toDoList.addActionToFile(a3);
+        toDoList.addActionToFile(actions);
 
         //printing the file
         toDoList.printFile();
@@ -33,8 +35,7 @@ public class ToDoListAppl {
         toDoList.clearFile();
 
         //second try, adding actions to the file
-        toDoList.addActionToFile(a1);
-        toDoList.addActionToFile(a2);
+        toDoList.addActionToFile(actions);
 
         //printing the file
         toDoList.printFile();
